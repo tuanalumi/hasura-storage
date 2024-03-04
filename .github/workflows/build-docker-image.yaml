@@ -12,7 +12,7 @@ on:
         required: true
 
 env:
-  CONTAINER_NAME: nhost/hasura-storage
+  CONTAINER_NAME: tuanalumi/hasura-storage
 
 jobs:
   docker-image:

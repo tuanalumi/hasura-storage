@@ -3,6 +3,7 @@ package metadata
 import (
 	"context"
 	"errors"
+	"fmt"
 	"net/http"
 
 	"github.com/hasura/go-graphql-client"
@@ -193,6 +194,8 @@ func (h *Hasura) InitializeFile(
 		"name":     graphql.String(name),
 		"size":     graphql.Int(size),
 	}
+
+	fmt.Printf("%+v\n", variables) // nolint:forbidigo
 
 	client := h.client.WithRequestModifier(h.authorizer(headers))
 	if err := client.Exec(
